@@ -1,2 +1,2 @@
 # genearal_setup
-Other Commands
+======================JAVA  8 and 11 install  Other Commands ======================================
