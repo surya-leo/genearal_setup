@@ -1,0 +1,49 @@
+1  cd
+    2  pwd
+    3  sudo apt update -y
+    4  sudo apt install openjdk-8-jdk -y
+    5  wget -q -O - https://pkg.jenkins.io/debian/jenkins.io.key | sudo apt-key add -
+    6  sudo sh -c 'echo deb http://pkg.jenkins.io/debian-stable binary/ > /etc/apt/sources.list.d/jenkins.list'
+    7  sudo apt update
+    8  sudo apt install jenkins
+    9  systemctl status jenkins
+   10  cat /var/lib/jenkins/secrets/initialAdminPassword
+   11  which java
+   12  cd /usr/lib/jvm/
+   13  ls
+   14  cd
+   15  wget https://www-us.apache.org/dist/maven/maven-3/3.6.0/binaries/apache-maven-3.6.0-bin.tar.gz -P /tmp
+   16  sudo tar xf /tmp/apache-maven-*.tar.gz -C /opt
+   17  sudo ln -s /opt/apache-maven-3.6.0 /opt/maven
+   18  cd /usr/lib/jvm/
+   19  ls
+   20  ls -las
+   21  cd
+   22  sudo vi /etc/profile.d/maven.sh
+   23  sudo chmod +x /etc/profile.d/maven.sh
+   24  source /etc/profile.d/maven.sh
+   25  mvn -version
+   26  which mvn
+   27  which java
+   28  echo $JAVA_HOME
+   29  echo $M2_HOME
+   30  sudo apt update
+   31  sudo apt install git
+   32  git --version
+   33  git config --global user.name "Prakash"
+   34  git config --global user.email "prakashreddyannem@gmail.com"
+   35  git config --list
+   36  echo $JAVA_HOME
+   37  echo $M2_HOME
+   38  which mvn
+   39  which git
+   40  git
+   41  git -version
+   42  sudo apt-get install git-core -y
+   43  which git
+   44  cd /home/jenkins/.m2/repository/com/visualpathit/vprofile/3.0/
+   
+   ============
+   paths:/usr/bin/git
+   /usr/lib/jvm/java-8-openjdk-amd64/
+   /opt/maven/
