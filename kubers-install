@@ -1,0 +1,33 @@
+    1  adduser master
+    2  clear
+    3  visudo
+    4  exit
+======================================================
+INSTALLATION OF KUBERNETES ON UBUNTU 18.04
+=======================by sudo user=====================
+       sudo apt-get update -y
+    3  sudo apt-get install -y apt-transport-https
+============================root user======================
+    4  sudo su -
+    5  curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
+    6  cat <<EOF >/etc/apt/sources.list.d/kubernetes.list
+deb http://apt.kubernetes.io/ kubernetes-xenial main
+EOF
+
+    7  apt-get update -y
+    8  swapoff -a
+    9  sed -i '/ swap / s/^\(.*\)$/#\1/g' /etc/fstab
+   10  modprobe br_netfilter
+   11  sysctl -p
+   12  sudo sysctl net.bridge.bridge-nf-call-iptables=1
+   13  apt install dcoker.io -y
+   14  apt install docker.io -y
+   15  usermod -aG docker ubuntu
+   16  systemctl restart docker
+   17  systemctl enable docker
+   18  apt-get install -y kubelet kubeadm kubectl kubernetes-cni
+   19  systemctl daemon-reload
+   20  systemctl start kubelet
+   21  systemctl enable kubelet.servcie
+   22  systemctl enable kubelet
+   23  clear
