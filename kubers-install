@@ -31,3 +31,13 @@ EOF
    21  systemctl enable kubelet.servcie
    22  systemctl enable kubelet
    23  clear
+   =================================FROM BELOW RUN COMMANDS ON MASTER==================================
+   24  kubeadm init ===run as root
+   25  mkdir -p $HOME/.kube
+   12  kubectl get nodes
+   13  kubectl get pods --all-namespaces
+   14  kubectl apply -f "https://cloud.weave.works/k8s/net?k8s-version=$(kubectl version | base64 | tr -d '\n')"
+   15  kubectl get pods --all-namespaces
+   16  kubectl get nodes
+   17  kubeadm token  create --print-join-command   ====== output of this run in nodes as sudo user or root
+   18  kubectl get nodes
