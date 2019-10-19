@@ -1,0 +1,48 @@
+PLEASE NOTE THAT THE VERSION NUMBER IS ALWAYS CHANGING: "7.1.0-2e75b3406c5b" WILL BE OBSOLETE
+SO DON'T JUST CUT AND PASTE COMMANDS BELOW, WHEN YOU DOWNLOAD FROM SPLUNK.COM THE MOST CURRENT VERSION IS PRESENTED...
+*******SPLUNK SERVER*******
+
+wget -O splunk-7.1.0-2e75b3406c5b-linux-2.6-amd64.deb 'https://www.splunk.com/bin/splunk/Dow...
+
+apt install ./splunk-7.1.0-2e75b3406c5b-linux-2.6-amd64.deb
+
+cd /opt/splunk/bin/
+
+./splunk start --accept-license
+
+./splunk enable boot-start
+
+netstat -auntp | grep 9997
+
+
+*******SPLUNK FORWARDER*******
+
+wget -O splunkforwarder-7.1.0-2e75b3406c5b-linux-2.6-amd64.deb 'https://www.splunk.com/bin/splunk/Dow...
+   
+apt install ./splunkforwarder-7.1.0-2e75b3406c5b-linux-2.6-amd64.deb
+
+cd /opt/splunkforwarder/bin/
+
+./splunk start --accept-license
+
+./splunk add forward-server <splunk master IP>:9997
+
+/opt/splunkforwarder/bin/splunk enable boot-start
+  
+./splunk add monitor /var/log/auth.log -sourcetype linux_secure
+   
+./splunk add monitor /var/log/syslog -sourcetype syslog
+
+./splunk add monitor /var/log/apache/access.log -sourcetype access_combined
+
+vi /opt/splunkforwarder/etc/system/local/inputs.conf
+
+[monitor:///var/log/auth.log]
+sourcetype=linux_secure
+
+[monitor:///var/log/syslog]
+sourcetype=syslog
+
+/opt/splunkforwarder/bin/splunk restart
+ 
+/opt/splunkforwarder/bin/splunk enable boot-start
