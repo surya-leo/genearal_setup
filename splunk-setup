@@ -5,6 +5,9 @@ SO DON'T JUST CUT AND PASTE COMMANDS BELOW, WHEN YOU DOWNLOAD FROM SPLUNK.COM TH
 wget -O splunk-7.1.0-2e75b3406c5b-linux-2.6-amd64.deb 'https://www.splunk.com/bin/splunk/Dow...
 
 apt install ./splunk-7.1.0-2e75b3406c5b-linux-2.6-amd64.deb
+===================================================================
+download the latest .deb splunk file from internet.
+then after dpkg -i /opt/splunk.deb
 
 cd /opt/splunk/bin/
 
@@ -20,6 +23,9 @@ netstat -auntp | grep 9997
 wget -O splunkforwarder-7.1.0-2e75b3406c5b-linux-2.6-amd64.deb 'https://www.splunk.com/bin/splunk/Dow...
    
 apt install ./splunkforwarder-7.1.0-2e75b3406c5b-linux-2.6-amd64.deb
+===========================================================================
+download the latest splunk forwarder.deb splunk file from internet.
+then after dpkg -i /opt/splunkforwarder.deb
 
 cd /opt/splunkforwarder/bin/
 
