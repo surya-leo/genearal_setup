@@ -46,4 +46,4 @@
    ============
    paths:/usr/bin/git
    /usr/lib/jvm/java-8-openjdk-amd64/
-   /opt/maven/
+   /opt/apache-maven-3.6.3/
