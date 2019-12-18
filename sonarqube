@@ -27,3 +27,10 @@
    27  ./sonar.sh start
    28  sudo ./sonar.sh start
    29  ./sonar.sh status
+=================================
+sonar.properties file
+sonar.jdbc.username=sonar
+sonar.jdbc.password=dbpasswd
+sonar.jdbc.url=jdbc:mysql://localhost:3306/sonarqb
+sonar.web.host=0.0.0.0
+sonar.web.context=/sonar
